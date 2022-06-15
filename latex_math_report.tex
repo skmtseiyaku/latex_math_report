@@ -3,6 +3,75 @@
 
 \begin{document}
 
+\section*{0\ \ \ はじめ}
 
+これから数学・物理レポート用の\LaTeX テンプレートを作ってみたいと思う.
+字下げは1文字にしてあるが, しばらく変更しないとする.
+
+まずは書式. 基本的に太字と下線以外, 英字のみ対応できる.
+
+\textup{Basic}\ \textit{Italics}\ \textsl{Forced italics}\ \textbf{Bold}\ \underline{Underline}
+
+\textup{基本}\ \textbf{太字}\ \underline{下線}
+
+\begin{itemize}
+    \item 箇条（番号なし）
+    \item 箇条
+\end{itemize}
+
+\begin{enumerate}
+    \item 箇条（番号あり）
+    \item 箇条
+\end{enumerate}
+
+句点については, ``コマ'', ドット\dots 
+
+\section{節・段落}
+
+\subsection{Subsection}
+
+Subsection 1
+
+\subsection{Subsection}
+
+Subsection 2
+
+\section{公式}
+
+文章の中で公式を書くのは $E=mc^2$のように, 
+また独立の行で
+
+\[ E=mc^2 \]
+
+このように実現する.
+
+またもう一つ独立な公式の書き方は
+
+\begin{equation}
+E=m
+\end{equation}
+
+このようである. 以下のように, そこに番号はついてある.
+
+\begin{equation}
+    U_k=\frac{1}{2}mv^2
+\end{equation}
+\label{U_k}
+
+引用する場合(\ref{U_k})は, ``label''を使う. 
+この二つの様式を活用して, 見やすいレポートが作れる. 
+また, 上付き文字と下付き文字も, それぞれ集合して
+
+\[ T^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q} = T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) \]
+
+このようにも表現する.
+ 
+We write integrals using $\int$ and fractions using $\frac{a}{b}$. Limits are placed on integrals using superscripts and subscripts:
+
+\[ \int_0^1 \frac{dx}{e^x} =  \frac{e-1}{e} \]
+
+Lower case Greek letters are written as $\omega$ $\delta$ etc. while upper case Greek letters are written as $\Omega$ $\Delta$.
+
+Mathematical operators are prefixed with a backslash as $\sin(\beta)$, $\cos(\alpha)$, $\log(x)$ etc.
 
 \end{document}
