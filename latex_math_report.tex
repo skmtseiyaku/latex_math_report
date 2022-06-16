@@ -2,8 +2,18 @@
 \usepackage{luatexja, amsmath, amsthm, amssymb, graphicx}
 
 \begin{document}
+\thispagestyle{empty}
 
-\section*{0\ \ \ はじめ}
+このページの番号は消した.
+
+ブランクページが望まれた場合は空行でいい.
+
+\newpage
+
+\section*{はじめ}
+\setcounter{page}{0}
+
+このページは0にセットした.
 
 これから数学・物理レポート用の\LaTeX テンプレートを作ってみたいと思う.
 字下げは1文字にしてあるが, しばらく変更しないとする.
@@ -24,9 +34,13 @@
     \item 箇条
 \end{enumerate}
 
-句点については, ``コマ'', ドット\dots 
+句点については, ``コマ'', ドット\dots
 
+\setcounter{section}{-1}
 \section{節・段落}
+
+setcounterで-1にセットしたのでこの節は0になる. 
+counterは, 現在の状態を変更する.
 
 \subsection{Subsection}
 
@@ -48,10 +62,10 @@ Subsection 2
 またもう一つ独立な公式の書き方は
 
 \begin{equation}
-E=m
+1+1=2
 \end{equation}
 
-このようである. 以下のように, そこに番号はついてある.
+このようである. そこに番号はついてある.
 
 \begin{equation}
     U_k=\frac{1}{2}mv^2
@@ -62,16 +76,17 @@ E=m
 この二つの様式を活用して, 見やすいレポートが作れる. 
 また, 上付き文字と下付き文字も, それぞれ集合して
 
-\[ T^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q} = T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) \]
+\[ ^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q}T^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q}　
+= T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) \]
 
 このようにも表現する.
  
-We write integrals using $\int$ and fractions using $\frac{a}{b}$. Limits are placed on integrals using superscripts and subscripts:
+積分は$\int$で, 分式は$\frac{a}{b}$. 上付き$^{upper}$と下付き$_{lower}$はこのように書き, 積分の上下限も同じ.
 
 \[ \int_0^1 \frac{dx}{e^x} =  \frac{e-1}{e} \]
 
-Lower case Greek letters are written as $\omega$ $\delta$ etc. while upper case Greek letters are written as $\Omega$ $\Delta$.
+グリシア小文字は$\omega$, $\delta$で, 大文字は$\Omega$, $\Delta$で書く.
 
-Mathematical operators are prefixed with a backslash as $\sin(\beta)$, $\cos(\alpha)$, $\log(x)$ etc.
+三角関数, 対数関数等特殊な関数は, backslashが必要となる: $\sin(\beta)$, $\cos(\alpha)$, $\log(x)$.
 
 \end{document}
