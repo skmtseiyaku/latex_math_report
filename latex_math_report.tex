@@ -2,25 +2,22 @@
 \usepackage{luatexja, amsmath, amsthm, amssymb, graphicx}
 
 \begin{document}
-\thispagestyle{empty}
 
+\thispagestyle{empty}
 このページの番号は消した.
 
 ブランクページが望まれた場合は空行でいい.
-
 \newpage
 
 \section*{はじめ}
 \setcounter{page}{0}
-
 このページは0にセットした.
-
 これから数学・物理レポート用の\LaTeX テンプレートを作ってみたいと思う.
 字下げは1文字にしてあるが, しばらく変更しないとする.
 
 まずは書式. 基本的に太字と下線以外, 英字のみ対応できる.
 
-\textup{Basic}\ \textit{Italics}\ \textsl{Forced italics}\ \textbf{Bold}\ \underline{Underline}
+\textup{Basic}\ \texttt{Typewriter} \textsf{Sans Serif} \textit{Italic}\ \textsl{Slanted}\ \textbf{Bold}\ \textsc{Small Capitals} \underline{Underline}
 
 \textup{基本}\ \textbf{太字}\ \underline{下線}
 
@@ -34,24 +31,22 @@
     \item 箇条
 \end{enumerate}
 
-句点については, ``コマ'', ドット\dots
+句点については,
+
+コマ``\ '' ドット\dots
 
 \setcounter{section}{-1}
 \section{節・段落}
-
-setcounterで-1にセットしたのでこの節は0になる. 
+\texttt{$\backslash$setcounter}で -1 にセットしたのでこの節は0になる. 
 counterは, 現在の状態を変更する.
 
 \subsection{Subsection}
-
 Subsection 1
 
 \subsection{Subsection}
-
 Subsection 2
 
 \section{公式}
-
 文章の中で公式を書くのは $E=mc^2$のように, 
 また独立の行で
 
@@ -72,21 +67,29 @@ Subsection 2
 \end{equation}
 \label{U_k}
 
-引用する場合(\ref{U_k})は, ``label''を使う. 
+引用する場合(\ref{U_k})は, \texttt{$\backslash$label}を使う. 
 この二つの様式を活用して, 見やすいレポートが作れる. 
 また, 上付き文字と下付き文字も, それぞれ集合して
 
-\[ ^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q}T^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q}　
+\[ ^{upper\ left}_{j_1 j_2 \dots j_q}T^{i_1 i_2 \dots i_p}_{lower\ right}　
 = T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) \]
 
 このようにも表現する.
  
-積分は$\int$で, 分式は$\frac{a}{b}$. 上付き$^{upper}$と下付き$_{lower}$はこのように書き, 積分の上下限も同じ.
+積分は$\int$で, 分式は$\frac{a}{b}$. 
+上付き$^{upper}$と下付き$_{lower}$はこのように書き, 積分の上下限も同じ.
+偏微分の記号は$\partial$で, ベクトルは$\vec{A}$である.
+ルートは$\sqrt{x}$と$\root n \of{x}$で, 
 
 \[ \int_0^1 \frac{dx}{e^x} =  \frac{e-1}{e} \]
 
 グリシア小文字は$\omega$, $\delta$で, 大文字は$\Omega$, $\Delta$で書く.
 
-三角関数, 対数関数等特殊な関数は, backslashが必要となる: $\sin(\beta)$, $\cos(\alpha)$, $\log(x)$.
+三角関数, 対数関数等特殊な関数は, \texttt{$\backslash$backslash} $\backslash$が必要となる: $\sin(\beta)$, $\cos(\alpha)$, $\log(x)$.
+
+\newtheorem{teiri}{定理}
+\begin{teiri}
+定理などの項目序列は定義できる.
+\end{teiri}
 
 \end{document}
