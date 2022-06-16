@@ -22,6 +22,8 @@
 \textup{Basic}\ \texttt{Typewriter} \textsf{Sans Serif} \textit{Italic}\ \textsl{Slanted}\ \textbf{Bold}\ \textsc{Small Capitals} \underline{Underline}
 
 \textup{基本}\ \textbf{太字}\ \underline{下線}
+\[ \mathbb{MATHBBCPTL} \mathbf{MathBF} \mathsf{MathSF} \mathfrak{MathFrak} \mathcal{MATHCALCPTL} \mathsf{MathSF} \mathtt{MathTT} \]
+
 
 \begin{itemize}
     \item 箇条（番号なし）
@@ -53,18 +55,19 @@ Subsection 1
 \subsection{Subsection}
 Subsection 2
 
-\section{公式}
+\section{数式}
+\subsection{公式}
 文章の中で公式を書くのは $E=mc^2$のように, 
 また独立の行で
 
-\[ E=mc^2 \]
+    \[ E=mc^2 \]
 
 このように実現する.
 またもう一つ独立な公式の書き方は
 
 \setcounter{equation}{-1}
 \begin{equation}
-1+1=2
+    1+1=2
 \end{equation}
 
 このようである. そこに番号はついてあり, 
@@ -77,34 +80,92 @@ Subsection 2
 
 (\ref{U_k})を引用する場合は, \texttt{$\backslash$label}を使う. 
 この二つの様式を活用して, 見やすいレポートが作れる. 
-また, 上付き文字と下付き文字も, それぞれ集合して
 
-\[ ^{upper\ left}_{j_1 j_2 \dots j_q}T^{i_1 i_2 \dots i_p}_{lower\ right}　
-= T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) \]
+\subsection{記号}
+上付き$^{upper}$と下付き$_{lower}$はこのように書き, 
+積分の上下限と総和記号にも使う.
+また上付き文字と下付き文字も, それぞれ集合して
+
+    \[ ^{upper\ left}_{j_1 j_2 \dots j_q}T^{i_1 i_2 \dots i_p}_{lower\ right}　
+    = T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) \]
 
 このようにも表現する.
- 
-積分は$\int$で, 
-分式は$\frac{a}{b}$. 
-上付き$^{upper}$と下付き$_{lower}$はこのように書き, 
-積分の上下限も同じ.
+
+積分などは$\int, \oint,\ \iint$と$\int_0^1 dx$で, 
+分式は$\frac{a}{b}$である. 
 偏微分の記号は$\partial$で, 
 ベクトルは$\vec{A}$である.
-ルートは$\sqrt{x}$と$\root n \of{x}$で, 
+ルートは$\sqrt{x}$と$\root n \of{x}$である.
 
+総和記号と積記号は$\sum, \prod$と$\sum_{i=1}^n$で, 
+極限は$\lim_{x\rightarrow\infty}$である.
+これらの様式は, 異なる環境（\texttt{\textit{equation}}など）で違っている.
 
-\[ \int_0^1 \frac{dx}{e^x} =  \frac{e-1}{e} \]
+大型のかっこ（絶対値）は
 
-グリシア小文字は$\omega$, $\delta$で, 
-大文字は$\Omega$, $\Delta$で書く.
+    \[\left(\frac{\frac{a}{abc}}{abc}\right) \left[\frac{\frac{a}{abc}}{abc}\right] \left\{\frac{\frac{a}{abc}}{abc}\right\} \left|\frac{\frac{a}{abc}}{abc}\right|\]
+
+である.
 
 三角関数, 対数関数等特殊な関数は, 
 \texttt{$\backslash$backslash}が必要となる: 
 $\sin(\beta)$, $\cos(\alpha)$, $\log(x)$.
+他の関数は, $\mbox{div} \vec{x}$のように書く.
 
-\newtheorem{teiri}{定理}
+ギリシャ小文字は$\alpha$, $\gamma$で, 
+大文字は$\Delta$, $\Omega$などで書く.
+
+運算記号については, 
+
+    \[\pm \mp \times \div \cdot \backslash \setminus \ast \star \parallel \mid \propto \]
+    \[\leq \geq \leqq \geqq \leqslant \geqslant \neq \simeq \cong \fallingdotseq \subset \supset \subseteq \supseteq \in \ni\]
+    \[\leftarrow \longleftarrow \Leftarrow \Longleftarrow \rightarrow \longrightarrow \Rightarrow \Longrightarrow \leftrightarrow \longleftrightarrow \Leftrightarrow \Longleftrightarrow \uparrow \Uparrow \downarrow \Downarrow \updownarrow \Updownarrow \leftrightarrows \]
+    \[\overrightarrow{overright} \overline{overline} \underline{underline} \overbrace{overbrace} \underbrace{underbrace} \binom{1}{2} \]
+
+の通りである.
+
+\subsection{行列, 連立方程式など}
+\[
+    \begin{pmatrix}
+        x_{11} & \cdots & x_{1n} \\ 
+        \vdots & \ddots & \vdots \\
+        x_{m1} & \cdots & x_{mn} \\
+    \end{pmatrix}
+\]
+
+\[
+    \begin{vmatrix}
+        x_{11} & \cdots & x_{1n} \\ 
+        \vdots & \ddots & \vdots \\
+        x_{m1} & \cdots & x_{mn} \\
+    \end{vmatrix}
+\]
+
+\[
+    |x|=
+    \begin{cases}
+        x & x \geq 0 \\
+        -x & \text{文字でも説明できる.}
+    \end{cases}  
+\]
+
+$\begin{cases}
+    \ x^2&=y^2+z^2 \\
+    \ x^3+y^3&<z^3+w^3
+\end{cases}$\ \ 
+$\begin{cases}
+    \ x^2=y^2+z^2 \\
+    \ x^3+y^3<z^3+w^3
+\end{cases}$ 
+
+\begin{align}
+    x^2 &= y^2+z^2 \text{\ これも\texttt{\textit{equation}}の} \\
+    x^3+y^3 &< z^3+w^3 \text{\ counterに従う.}
+\end{align}
+
+\newtheorem{teiri}{定理（系）}
 \begin{teiri}
-定理などの項目序列は定義できる.
+    定理などの項目序列は定義できる.
 \end{teiri}
 
 \end{document}
